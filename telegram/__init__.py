@@ -70,5 +70,5 @@ def splitFile():
             f.write(json.dumps(file1))
 
 
-text = get_details_text()
+# text = get_details_text()
 # splitFile()
