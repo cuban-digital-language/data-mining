@@ -15,7 +15,7 @@ def get_text(path=''):
 
             for obj in data:
                 try:
-                    text.append(obj['text'])
+                    text.append(obj['text'], 'Facebook')
                 except:
                     pass
 
@@ -35,7 +35,7 @@ def get_details_text(path=""):
 
             for obj in data:
                 try:
-                    text.append((obj['text'], obj['date'], None))
+                    text.append((obj['text'], obj['date'], 'Facebook'))
                 except:
                     pass
 

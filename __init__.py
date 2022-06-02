@@ -12,3 +12,7 @@ except (ModuleNotFoundError, ImportError):
 
 def get_all_text(path=''):
     return fb.get_text(path) + tg.get_text(path) + tw.get_text(path) + cu.get_text(path)
+
+
+def get_all_text_with_details(path=''):
+    return fb.get_details_text(path) + tg.get_details_text(path) + tw.get_details_text(path) + cu.get_details_text(path)
