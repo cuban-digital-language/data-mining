@@ -36,7 +36,7 @@ def get_details_text(path=''):
             for obj in data:
                 try:
                     text.append(
-                        (obj['message'], obj['date'].split('T')[0], 'Telegram'))
+                        (obj['message'], obj['date'].replace('T', ' '), 'Telegram'))
                 except:
                     pass
 
