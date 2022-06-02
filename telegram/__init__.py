@@ -2,12 +2,12 @@ import os
 import json
 
 
-def get_text():
+def get_text(path=''):
     text = []
 
-    for filename in os.listdir(os.path.join(os.getcwd(), 'data/telegram')):
+    for filename in os.listdir(os.path.join(os.getcwd(), f'{path}telegram')):
         # open in readonly mode
-        with open(os.path.join(os.getcwd(), f'data/telegram/{filename}'), 'r') as f:
+        with open(os.path.join(os.getcwd(), f'{path}telegram/{filename}'), 'r') as f:
             try:
                 data = json.load(f)
             except:
@@ -22,12 +22,12 @@ def get_text():
     return text
 
 
-def get_details_text():
+def get_details_text(path=''):
     text = []
 
-    for filename in os.listdir(os.path.join(os.getcwd(), 'data/telegram')):
+    for filename in os.listdir(os.path.join(os.getcwd(), f'{path}telegram')):
         # open in readonly mode
-        with open(os.path.join(os.getcwd(), f'data/telegram/{filename}'), 'r') as f:
+        with open(os.path.join(os.getcwd(), f'{path}telegram/{filename}'), 'r') as f:
             try:
                 data = json.load(f)
             except:
@@ -42,12 +42,12 @@ def get_details_text():
     return text
 
 
-def splitFile():
+def splitFile(path=''):
     file1 = []
     file2 = []
-    for filename in os.listdir(os.path.join(os.getcwd(), 'data/telegram')):
+    for filename in os.listdir(os.path.join(os.getcwd(), f'/telegram')):
         # open in readonly mode
-        with open(os.path.join(os.getcwd(), f'data/telegram/{filename}'), 'r') as f:
+        with open(os.path.join(os.getcwd(), f'{path}telegram/{filename}'), 'r') as f:
             try:
                 data = json.load(f)
             except:
@@ -63,10 +63,10 @@ def splitFile():
                 except:
                     pass
 
-        with open(os.path.join(os.getcwd(), f'data/telegram/newData/{filename}1.json'), 'w') as f:
+        with open(os.path.join(os.getcwd(), f'{path}telegram/{filename}1.json'), 'w') as f:
             f.write(json.dumps(file1))
 
-        with open(os.path.join(os.getcwd(), f'data/telegram/newData/{filename}2.json'), 'w') as f:
+        with open(os.path.join(os.getcwd(), f'{path}telegram/{filename}2.json'), 'w') as f:
             f.write(json.dumps(file1))
 
 

@@ -1,8 +1,8 @@
 import json
 
 
-def get_text():
-    f = open('data/cubadebate.json')
+def get_text(path=''):
+    f = open(f'{path}cubadebate/cubadebate.json')
     data = json.load(f)
 
     text = []
@@ -14,8 +14,8 @@ def get_text():
     return text
 
 
-def get_details_text():
-    f = open('data/cubadebate.json')
+def get_details_text(path=''):
+    f = open(f'{path}cubadebate/cubadebate.json')
     data = json.load(f)
 
     text = []

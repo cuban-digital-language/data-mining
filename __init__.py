@@ -10,5 +10,5 @@ except (ModuleNotFoundError, ImportError):
     import twitter as tw
 
 
-def get_all_text():
-    return fb.get_text() + tg.get_text() + tw.get_text() + cu.get_text()
+def get_all_text(path=''):
+    return fb.get_text(path) + tg.get_text(path) + tw.get_text(path) + cu.get_text(path)
