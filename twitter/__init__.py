@@ -8,12 +8,12 @@ def get_text(path=''):
     user = set()
     text = []
     for obj in data:
-        text.append(obj['text'], 'Twitter')
+        text.append((obj['text'], 'Twitter'))
         if obj['author'] in user:
             continue
-        text.append(obj['raw_description'], 'Twitter')
+        text.append((obj['raw_description'], 'Twitter'))
         if obj['raw_description'] != obj['description']:
-            text.append(obj['description'], 'Twitter')
+            text.append((obj['description'], 'Twitter'))
 
     return text
 
