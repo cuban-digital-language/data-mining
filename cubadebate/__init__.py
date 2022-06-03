@@ -7,9 +7,9 @@ def get_text(path=''):
 
     text = []
     for obj in data:
-        text.append(obj['text'], 'CubaDebate')
+        text.append((obj['text'], 'CubaDebate'))
         for c in obj['comments']:
-            text.append(c['text'], 'CubaDebate')
+            text.append((c['text'], 'CubaDebate'))
 
     return text
 
