@@ -6,6 +6,8 @@ def get_text(path=''):
     text = []
 
     for filename in os.listdir(os.path.join(os.getcwd(), f'{path}telegram')):
+        if not filename.endswith('.json'):
+            continue
         # open in readonly mode
         with open(os.path.join(os.getcwd(), f'{path}telegram/{filename}'), 'r') as f:
             try:
