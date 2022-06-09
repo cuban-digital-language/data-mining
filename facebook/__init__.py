@@ -6,6 +6,10 @@ def get_text(path=''):
     text = []
 
     for filename in os.listdir(os.path.join(os.getcwd(), f'{path}facebook')):
+
+        if not filename.endswith('.json'):
+            continue
+
         # open in readonly mode
         with open(os.path.join(os.getcwd(), f'{path}facebook/{filename}'), 'r') as f:
             try:
