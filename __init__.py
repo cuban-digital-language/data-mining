@@ -16,3 +16,17 @@ def get_all_text(path=''):
 
 def get_all_text_with_details(path=''):
     return fb.get_details_text(path) + tg.get_details_text(path) + tw.get_details_text(path) + cu.get_details_text(path)
+
+
+def count_text(texts):
+    text_list = {
+        'CubaDebate': 0,
+        'Facebook': 0,
+        'Twitter': 0,
+        'Telegram': 0
+    }
+
+    for t, d, n in texts:
+        text_list[n] += 1
+
+    return text_list

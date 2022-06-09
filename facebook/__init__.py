@@ -15,7 +15,7 @@ def get_text(path=''):
 
             for obj in data:
                 try:
-                    text.append(obj['text'], 'Facebook')
+                    text.append((obj['text'], 'Facebook'))
                 except:
                     pass
 
