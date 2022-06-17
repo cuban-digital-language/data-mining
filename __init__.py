@@ -30,3 +30,8 @@ def count_text(texts):
         text_list[n] += 1
 
     return text_list
+
+
+if __name__ == '__main__':
+    text = get_all_text_with_details()
+    print(count_text(text))

@@ -4,7 +4,7 @@ import json
 
 def get_text(path=''):
     text = []
-
+    s = set()
     for filename in os.listdir(os.path.join(os.getcwd(), f'{path}facebook')):
 
         if not filename.endswith('.json'):
@@ -18,8 +18,14 @@ def get_text(path=''):
                 continue
 
             for obj in data:
+                if obj['url'] in s:
+                    continue
+                s.add(obj['url'])
                 try:
                     text.append((obj['text'], 'Facebook'))
+                    for comment in obj['comment']:
+                        text.append(
+                            (comment['text'], 'Facebook'))
                 except:
                     pass
 
@@ -28,6 +34,7 @@ def get_text(path=''):
 
 def get_details_text(path=""):
     text = []
+    s = set()
 
     for filename in os.listdir(os.path.join(os.getcwd(), f'{path}facebook')):
         # open in readonly mode
@@ -38,8 +45,14 @@ def get_details_text(path=""):
                 continue
 
             for obj in data:
+                if obj['url'] in s:
+                    continue
+                s.add(obj['url'])
                 try:
                     text.append((obj['text'], obj['date'], 'Facebook'))
+                    for comment in obj['comment']:
+                        text.append(
+                            (comment['text'], comment['date'], 'Facebook'))
                 except:
                     pass
 
